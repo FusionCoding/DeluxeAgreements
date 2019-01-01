@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.fusion.deluxeagreements</groupId>
+  <artifactId>deluxeagreements</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>de.fusion.deluxeagreements.DeluxeAgreements</name>
+  <description>A simple agreement plugin for servers to handle privacy law agreements.</description>
+  <url>https://deploys.io</url>
+
+  <build>
+    <directory>C:\Users\Tim\Desktop\Spigot 1.12.2 Server\export_deluxeagreements2</directory>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+
+        <configuration>
+          <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml
+          </dependencyReducedPomLocation>
+          <artifactSet>
+            <excludes>
+              <exclude>org.spigotmc:spigot-api</exclude>
+              <exclude>org.bukkit:craftbukkit</exclude>
+              <exclude>com.google.code.gson:gson</exclude>
+              <exclude>commons-lang:commons-lang</exclude>
+              <exclude>com.googlecode.json-simple:json-simple</exclude>
+              <exclude>junit:junit:jar:4.10</exclude>
+              <exclude>junit</exclude>
+              <exclude>org.hamcrest:hamcrest-core</exclude>
+              <exclude>com.google.guava:guava</exclude>
+              <exclude>org.yaml:snakeyaml</exclude>
+              <exclude>net.md-5:bungeecord-chat</exclude>
+            </excludes>
+          </artifactSet>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <developers>
+    <developer>
+      <name>FusionCoding</name>
+      <email>tim@deploys.io</email>
+      <url>https://github.com/FusionCoding</url>
+    </developer>
+  </developers>
+
+
+  <dependencies>
+
+    <dependency>
+      <groupId>co.aikar</groupId>
+      <artifactId>taskchain-bukkit</artifactId>
+      <version>LATEST</version>
+      <scope>compile</scope>
+
+    </dependency>
+
+    <!-- Minecraft Text -->
+
+    <dependency>
+      <groupId>net.kyori</groupId>
+      <artifactId>text</artifactId>
+      <version>1.11-1.4.0</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.code.findbugs</groupId>
+          <artifactId>jsr305</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.google.code.gson</groupId>
+          <artifactId>gson</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.kyori</groupId>
+          <artifactId>blizzard</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- Spigot -->
+    <dependency>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
+      <version>1.12.2-R0.1-SNAPSHOT</version>
+    </dependency>
+
+    <!-- Bukkit -->
+    <dependency>
+      <groupId>org.bukkit</groupId>
+      <artifactId>craftbukkit</artifactId>
+      <version>1.12.2-R0.1-SNAPSHOT</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.json/json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20180130</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>de.fusion.bStats</groupId>
+      <artifactId>bStats</artifactId>
+      <version>2.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+  </dependencies>
+
+
+  <repositories>
+    <repository>
+      <id>spigot-repo</id>
+      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+    </repository>
+    <repository>
+      <id>aikar</id>
+      <url>https://repo.aikar.co/content/groups/aikar/</url>
+    </repository>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
+
+
+</project>

@@ -1,0 +1,11 @@
+name: DeluxeAgreements
+version: 1.0
+description: A simple agreement plugin for servers to handle privacy law agreements.
+author: FusionCoding
+main: de.fusion.deluxeagreements.DeluxeAgreements
+website: https://deploys.io
+
+commands:
+  deluxeagreements:
+    description: Command for DeluxeAgreements
+    aliases: [da, agree]
